@@ -6,11 +6,11 @@ La documentacion la obtuve realizando ingenieria inversa al apk de HappyMod
 
 ## Tabla de contenidos
 
-1. [Generacion del UID](#2-generacion-del-uid)
-2. [Generacion del Stamp](#3-generacion-del-stamp)
-3. [Decodificacion de la respuesta](#4-decodificacion-de-la-respuesta)
-4. [Una implementacion mia en Python](#5-implementacion-completa-en-python)
-5. [Endpoints basicos de la app](#6-endpoints-documentados-de-la-aplicacion)
+1. [Generacion del UID](#1-generacion-del-uid)
+2. [Generacion del Stamp](#2-generacion-del-stamp)
+3. [Decodificacion de la respuesta](#3-decodificacion-de-la-respuesta)
+4. [Una implementacion mia en Python](#4-implementacion-completa-en-python)
+5. [Endpoints basicos de la app](#5-endpoints-documentados-de-la-aplicacion)
   
    - 6.1 [Sincronizacion de tiempo del servidor](#61-sincronizacion-de-tiempo-del-servidor)
    - 6.2 [Busqueda de aplicaciones](#62-busqueda-de-aplicaciones)
