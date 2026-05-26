@@ -6,12 +6,11 @@ La documentacion la obtuve realizando ingenieria inversa al apk de HappyMod
 
 ## Tabla de contenidos
 
-1. [Busquedas de Apps](#1-endpoint-de-busqueda)
-2. [Generacion del UID](#2-generacion-del-uid)
-3. [Generacion del Stamp](#3-generacion-del-stamp)
-4. [Decodificacion de la respuesta](#4-decodificacion-de-la-respuesta)
-5. [Una implementacion mia en Python](#5-implementacion-completa-en-python)
-6. [Endpoints basicos de la app](#6-endpoints-documentados-de-la-aplicacion)
+1. [Generacion del UID](#2-generacion-del-uid)
+2. [Generacion del Stamp](#3-generacion-del-stamp)
+3. [Decodificacion de la respuesta](#4-decodificacion-de-la-respuesta)
+4. [Una implementacion mia en Python](#5-implementacion-completa-en-python)
+5. [Endpoints basicos de la app](#6-endpoints-documentados-de-la-aplicacion)
   
    - 6.1 [Sincronizacion de tiempo del servidor](#61-sincronizacion-de-tiempo-del-servidor)
    - 6.2 [Busqueda de aplicaciones](#62-busqueda-de-aplicaciones)
@@ -21,30 +20,7 @@ La documentacion la obtuve realizando ingenieria inversa al apk de HappyMod
 
 ---
 
-## 1. Endpoint de busqueda
-
-**URL:**
-```
-POST https://app.apkomega.com/202010/api/search_list.php
-```
-
-**Payload (form-data):**
-
-| Campo        | Descripcion                                              | Ejemplo                            |
-|--------------|----------------------------------------------------------|------------------------------------|
-| `version`    | Version del APK                                          | `3.2.6`                            |
-| `uid`        | Identificador unico del dispositivo (MD5, 32 chars hex)  | `68920e5674b1d3ec969e4637d31e0345` |
-| `stamp`      | Token de autenticacion (MD5, ver seccion 3)              | `aded81012d495b8a27149080268fe6e3` |
-| `page`       | Numero de pagina                                         | `1`                                |
-| `keywords`   | Termino de busqueda                                      | `whatsapp`                         |
-| `lang`       | Idioma del dispositivo                                   | `es`                               |
-| `is_new_user`| 1 si es instalacion del dia, 2 si no                     | `1`                                |
-| `is_input`   | 2 si se escribio manualmente, 1 si es sugerencia         | `2`                                |
-| `input_word` | Texto parcial escrito antes de buscar (solo si is_input=2)| `wha`                             |
-
----
-
-## 2. Generacion del UID
+## 1. Generacion del UID
 
 ### Algoritmo
 
@@ -102,7 +78,7 @@ def generate_uid(board, brand, device, display, host,
 
 ---
 
-## 3. Generacion del Stamp
+## 2. Generacion del Stamp
 
 ### El `time_str`
 
@@ -177,7 +153,7 @@ def get_stamp(uid: str, offset: int = 0) -> str:
 
 ---
 
-## 4. Decodificacion de la respuesta
+## 3. Decodificacion de la respuesta
 
 La respuesta http no es json directo, pasa por tres capas en orden:
 
@@ -261,7 +237,7 @@ def decode_response(raw: str) -> str:
 
 ---
 
-## 5. Mi implementacion en Python
+## 4. Mi implementacion en Python
 
 ```python
 import hashlib, base64, gzip, time, json
@@ -347,7 +323,7 @@ if __name__ == "__main__":
 
 ---
 
-## 6. Endpoints documentados de la aplicacion
+## 5. Endpoints documentados de la aplicacion
 
 Todos los endpoints que usan `stamp` requieren que este sea generado en el momento
 de la solicitud, la respuesta de todos los endpoints de `apkomega.com`
@@ -355,7 +331,7 @@ usa el mismo esquema de cifrado descrito en la seccion 4
 
 ---
 
-### 6.1 Sincronizacion de tiempo del servidor
+### 5.1 Sincronizacion de tiempo del servidor
 
 **URL:**
 ```
@@ -392,7 +368,7 @@ la llamada en cada stamp
 
 ---
 
-### 6.2 Busqueda de aplicaciones
+### 5.2 Busqueda de aplicaciones
 
 **URL:**
 ```
@@ -448,7 +424,7 @@ POST https://app.apkomega.com/202010/api/search_list.php
 
 ---
 
-### 6.3 Generacion del hash de descarga
+### 5.3 Generacion del hash de descarga
 
 El `hash` es un hash es un token de autorizacion derivado
 del package name del mod, construido cortando y reordenando 4 fragmentos de 4
@@ -494,7 +470,7 @@ hash    = "24962664746c81fc"  16 chars hex
 
 ---
 
-### 6.4 Descarga de APK
+### 5.4 Descarga de APK
 
 **URL:**
 ```
@@ -563,7 +539,7 @@ el package base
 
 ---
 
-### 6.5 Detalle de aplicacion
+### 5.5 Detalle de aplicacion
 
 **URL:**
 ```
@@ -594,7 +570,7 @@ GET https://app.happymodapp.com/clist/3.2.6,es,US,1,com.whatsapp,rating,1,pdt_mo
 
 ---
 
-## 7. Analice:
+## 6. Analice:
 
 | Clase Java (nombres de jadx)       | Nombre original          | Funcion                                        |
 |-------------------------|--------------------------|---------------------------------------------|
