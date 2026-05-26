@@ -1,3 +1,4 @@
+# ya despues de sacar todo, hice un cliente simple con ayuda de IA, para poder poner a prueba todo
 import re
 import sys
 import requests
