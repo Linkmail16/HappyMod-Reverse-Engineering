@@ -12,11 +12,11 @@ La documentacion la obtuve realizando ingenieria inversa al apk de HappyMod
 4. [Una implementacion mia en Python](#4-implementacion-completa-en-python)
 5. [Endpoints basicos de la app](#5-endpoints-documentados-de-la-aplicacion)
   
-   - 6.1 [Sincronizacion de tiempo del servidor](#61-sincronizacion-de-tiempo-del-servidor)
-   - 6.2 [Busqueda de aplicaciones](#62-busqueda-de-aplicaciones)
-   - 6.3 [Generacion del Hash de descarga](#63-generacion-del-hash-de-descarga)
-   - 6.4 [Descarga del APK](#64-descarga-de-apk)
-   - 6.5 [Detalle de aplicacion](#65-detalle-de-aplicacion)
+   - 5.1 [Sincronizacion de tiempo del servidor](#51-sincronizacion-de-tiempo-del-servidor)
+   - 5.2 [Busqueda de aplicaciones](#52-busqueda-de-aplicaciones)
+   - 5.3 [Generacion del Hash de descarga](#53-generacion-del-hash-de-descarga)
+   - 5.4 [Descarga del APK](#54-descarga-de-apk)
+   - 5.5 [Detalle de aplicacion](#55-detalle-de-aplicacion)
 
 ---
 
