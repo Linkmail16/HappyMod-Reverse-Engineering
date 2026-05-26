@@ -592,5 +592,5 @@ GET https://app.happymodapp.com/clist/3.2.6,es,US,1,com.whatsapp,rating,1,pdt_mo
 
 ---
 
-> La documentacion la hice apoyandome de JADX e IDA pro, la app no esta tan ofsucada asi que fue facil reversear todo
+> La documentacion la hice apoyandome de JADX e IDA pro, la app no esta tan ofuscada asi que fue facil reversear todo
 > Lo hice con fines educativos y de investigacion
